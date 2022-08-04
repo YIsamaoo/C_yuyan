@@ -32,3 +32,32 @@ int main()
 //12345%10000 2345
 //10000/10 1000
 //2345/1000 2 ...
+
+
+//修改
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int a, i, j, k = 1;
+	int cnt = 0, re_i;
+
+	scanf_s("%d", &i);
+	re_i = i;
+	while (re_i > 9) {
+		re_i /= 10;
+		k *= 10;
+	}
+	do {
+		a = i / k;
+		i %= k;
+		k /= 10;
+		printf("%d", a);
+		if (k > 0) {
+			printf(" ");
+		}
+	} while (k > 0);
+
+	return 0;
+}
