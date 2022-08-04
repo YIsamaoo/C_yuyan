@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int x = 12345;
+	int t = 0;
+	do {
+		int d = x % 10;
+		t = t * 10 + d;
+		x /= 10;
+	}while (x>-0);
+	printf("%d", t);
+	return 0;
+}
