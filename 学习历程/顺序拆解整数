@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int a,i, j, k=1;
+	int cnt = 0,re_i;
+
+	scanf_s("%d", &i);
+	re_i = i;
+	do {
+		i /= 10;
+		cnt++;
+	} while (i > 0);
+	for (j = 1; j < cnt; j++) {
+		k *=10;
+	}
+	do {
+		a = re_i / k;
+		re_i %= k;
+		k /= 10;
+		printf("%d", a); 
+		if (k > 0) {
+			printf(" ");
+		}
+	} while(k>0);
+
+	return 0;
+}
+//12345
+//12345/10000 1
+//12345%10000 2345
+//10000/10 1000
+//2345/1000 2 ...
