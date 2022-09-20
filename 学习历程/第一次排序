@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+//#include<stdlib.h>
+int max(int a[],int len)
+{
+    int maxid=0;
+    for(int i=1;i<len;i++){
+        if(a[i]>a[maxid]){
+            maxid=i;
+        }
+    }return maxid;
+}
+
+int main()
+{
+    int a[]={65,76,36,86,36,83,62,83,62,86,26,85,26,89,5,82,21,7,3,};
+    int i =0;
+    int len = sizeof(a)/sizeof(a[0]);
+    /* printf("%d",maxid); */
+
+
+    for(i=0;i<len-1;i++){        
+        int maxid =max(a,len-i);
+        int t = a[maxid];
+        a[maxid]= a[len-(i+1)];
+        a[len-(i+1)]= t;
+    }
+    for(i=0;i<len;i++){
+        printf("%d\n",a[i]);
+    }
+    getch();
+}
