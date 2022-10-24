@@ -1,0 +1,10 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+	string p = "hello\0";
+	//string 用size ?.size()  char用 strlen strlen(?)
+	cout<<p.size();
+	return 0;
+} 
